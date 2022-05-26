@@ -12,24 +12,10 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-@EnableSwagger2
-@EnableWebMvc
 public class ItemAppApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ItemAppApplication.class, args);
-	}
-	
-	@Bean
-	public InternalResourceViewResolver defaultViewResolver() {
-		return new InternalResourceViewResolver();
-	}
-
-	@Bean
-	public Docket productApi() {
-		return new Docket(DocumentationType.SWAGGER_2).select()
-				.apis(RequestHandlerSelectors.basePackage("org.npci.itemapp.controller")).
-				build();
 	}
 
 }
