@@ -47,16 +47,4 @@ public class ItemEntity {
 	
 	@Column(name="dept_id")
 	private int deptId;
-	
-	
-	
-//	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//	@JoinColumn(name="category_id",referencedColumnName = "category_id")
-//	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-//	private CategoryEntity category;
-	
-//	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//	@JoinColumn(name="dept_id",referencedColumnName = "dept_id")
-//	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-//	private DepartmentEntity department;
 }

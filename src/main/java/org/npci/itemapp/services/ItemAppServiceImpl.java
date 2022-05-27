@@ -53,11 +53,11 @@ public class ItemAppServiceImpl implements ItemAppService{
 	@Override
 	public ItemEntity saveItemDetails(ItemEntity item) {
 		log.info("Saving User details for User Id: {}.",item.getItemId());
-		Optional<UserEntity> u = userRepo.findById(item.getCreatedBy());
+		Optional<UserEntity> userEntity = userRepo.findById(item.getCreatedBy());
 		Optional<UserEntity> u1 = userRepo.findById(item.getUpdatedBy());
 		Optional<CategoryEntity> c = catRepo.findById(item.getCategoryId());
 		Optional<DepartmentEntity> d = deptRepo.findById(item.getDeptId());
-		if(!u.isPresent()) {
+		if(!userEntity.isPresent()) {
 			throw new IntegrityViolationException("User Not Present for User Id: "+item.getCreatedBy());
 		}
 		else if(!u1.isPresent()) {
